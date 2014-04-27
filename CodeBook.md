@@ -10,10 +10,10 @@ are:
 * Subject - an integer ID in the range from 1 to 30 (inclusive) that identifies
 the human subject in the original experiment
 * Activity - one of the following labels that describes the activity being performed:
-	** WALKING
-	** WALKING_UPSTAIRS 
-	** WALKING_DOWNSTAIRS
-	** SITTING
-	** STANDING
-	** LAYING
+    - WALKING
+    - WALKING_UPSTAIRS 
+    - WALKING_DOWNSTAIRS
+    - SITTING
+    - STANDING
+    - LAYING
 * ...
