@@ -1,3 +1,9 @@
+# Download and unzip the dataset
+fileUrl <- "https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip"
+zipFile <- "dataset.zip"
+download.file(fileUrl, zipFile, method="curl")
+unzip(zipFile)
+
 # Set a buffer size for reading in the data files to prevent memory issues
 buffer <- 250
 
