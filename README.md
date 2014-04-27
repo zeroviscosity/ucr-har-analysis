@@ -1,3 +1,3 @@
-Getting And Cleaning Data Assignment - UCR HAR Analysis
-================
+# UCR HAR Analysis
 
+### Getting And Cleaning Data Assignment
