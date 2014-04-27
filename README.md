@@ -8,7 +8,7 @@ http://archive.ics.uci.edu/ml/datasets/Human+Activity+Recognition+Using+Smartpho
 
 The provided R script, run_analysis.R, downloads and unzips the dataset. It then 
 combines the training and test datasets before summarizing the observations and
-saving the resulting dataset as a CSV file.
+saving the resulting dataset as a CSV file called `tidy.csv`.
 
 The CODEBOOK.md file contains a description of the resulting tidy dataset, along 
 with a detailed description of the steps taken in creating it.
