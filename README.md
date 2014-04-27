@@ -10,5 +10,5 @@ The provided R script, `run_analysis.R`, downloads and unzips the dataset. It th
 combines the training and test datasets before summarizing the observations and
 saving the resulting dataset as a CSV file called `tidy.csv`.
 
-The `CODEBOOK.md` file contains a description of the resulting tidy dataset, along 
-with a detailed description of the steps taken in creating it.
+The `CodeBook.md` file contains a description of the resulting tidy dataset, along 
+with a description of the steps taken in creating it.
