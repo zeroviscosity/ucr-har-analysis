@@ -43,12 +43,12 @@ trainSubject <- read.delim(trainSubjectFile, header=F)
 testSubject <- read.delim(testSubjectFile, header=F)
 mergedSubject <- rbind(trainSubject, testSubject)
 
-# Label the activity column and add it to mergedData
+# Label the subject column and add it to mergedData
 colnames(mergedSubject) <- c("subject")
 mergedData <- cbind(mergedSubject, mergedData)
 
 # Prepare the tidy dataset
-# For each subject-activity pair, find the mean for each of the data columns
+# For each subject-activity pair, find the mean of each of the data columns
 tidyData <- data.frame()
 for (subject in 1:30) {
     for (activity in 1:6) {
