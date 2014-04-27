@@ -71,8 +71,9 @@ The following steps were taken:
 dataframes and then merged into a single dataframe.
 2. The dataset in `features.txt` was used to provide column names for the 
 merged dataset.
-3. Features with names containing `mean()` or `std()` were identified and used
-to pare down the dataset.
+3. Features with names containing `mean()` or `std()` (corresponding to the 
+mean and standard deviation of measurements) were identified and used to pare 
+down the dataset from 561 columns to just 66 columns.
 4. The datasets in `train/y_train.txt` and `test/y_test.txt`, which indicate
 which activity each row refers to, were merged into a single dataset before 
 being added as a new column on the left of the merged dataset.
