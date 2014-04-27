@@ -6,6 +6,7 @@ widths <- rep(16, 561)
 
 # Set the file names 
 # (this assumes the archive was unzipped in the same directory as this file)
+activityLabelsFile <- "./UCI HAR Dataset/activity_labels.txt"
 featuresFile <- "./UCI HAR Dataset/features.txt"
 trainDataFile <- "./UCI HAR Dataset/train/X_train.txt"
 trainSubjectFile <- "./UCI HAR Dataset/train/subject_train.txt"
@@ -46,5 +47,27 @@ mergedSubject <- rbind(trainSubject, testSubject)
 colnames(mergedSubject) <- c("subject")
 mergedData <- cbind(mergedSubject, mergedData)
 
-# Save mergedData as a CSV
-write.csv(mergedData, file="tidy.csv", row.names=F)
+# Prepare the tidy dataset
+# For each subject-activity pair, find the mean for each of the data columns
+tidyData <- data.frame()
+for (subject in 1:30) {
+    for (activity in 1:6) {
+        dataRows <- mergedData[(mergedData$subject == subject & 
+                               mergedData$activity == activity), c(-1,-2)]
+        tidyData <- rbind(tidyData, c(subject, activity, colMeans(dataRows)))
+    }
+}
+
+# Add the column names 
+colnames(tidyData) <- colnames(mergedData)
+
+# Order the data by subject and by activity
+tidyData <- tidyData[order(tidyData$subject, tidyData$activity),]
+
+# Load the acitivity labels and use them to relabel the activity column
+activityLabelsData <- read.delim(activityLabelsFile, header=F, sep=" ")
+activityLabels <- as.vector(activityLabelsData[, 2])
+tidyData$activity <- sapply(tidyData$activity, function(idx) activityLabels[idx])
+
+# Save tidyData as a CSV
+write.csv(tidyData, file="tidy.csv", row.names=F)
